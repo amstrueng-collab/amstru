@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amstru Engineering Consultancy | Precision Detailing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #A67C00;
+            --navy: #0F172A;
+            --slate: #1E293B;
+            --text-main: #F8FAFC;
+            --text-muted: #94A3B8;
+            --white: #FFFFFF;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--navy);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Fixed White Header Bar */
+        header {
+            background-color: var(--white);
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end; 
+            padding: 0 5%;
+            position: fixed; 
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 4px solid var(--gold);
+        }
+
+        /* Scrolling Logo Wrapper */
+        .logo-scroll-wrapper {
+            position: absolute;
+            top: 0;
+            left: 5%;
+            z-index: 1100; 
+            pointer-events: none; 
+        }
+
+        /* Logo Box - Gold border on ALL sides */
+        .logo-box {
+            background: var(--white);
+            padding: 20px;
+            width: 360px;
+            pointer-events: auto;
+            border: 4px solid var(--gold); 
+        }
+
+        .logo-box img {
+            width: 320px; 
+            height: auto;
+            display: block;
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--navy);
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover { color: var(--gold); }
+
+        .hero {
+            padding: 220px 8% 100px; 
+            text-align: center;
+            background-color: var(--navy);
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #FFD700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        .section { padding: 80px 8%; }
+
+        h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            border-left: 5px solid var(--gold);
+            padding-left: 20px;
+        }
+
+        .strategy-highlight {
+            background: var(--slate);
+            padding: 60px 40px;
+            border-radius: 4px;
+            border-left: 10px solid var(--gold);
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .strategy-quote {
+            font-size: 1.8rem;
+            font-style: italic;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.4;
+            font-weight: 300;
+        }
+
+        .strategy-sub {
+            color: #FFD700;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.03);
+            padding: 40px;
+            border-radius: 4px;
+            border-bottom: 4px solid var(--gold);
+            transition: 0.3s;
+        }
+
+        .card:hover { background: rgba(255,255,255,0.06); transform: translateY(-5px); }
+        .card h3 { color: #FFD700; margin-bottom: 15px; font-family: 'Montserrat'; }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--slate);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th, td { padding: 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        th { background: #162031; color: #FFD700; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+
+        footer {
+            background: #000;
+            padding: 80px 8%;
+            text-align: center;
+        }
+
+        .footer-info {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .contact-box h4 { color: #FFD700; margin-bottom: 8px; font-size: 0.9rem; text-transform: uppercase; }
+        .contact-box p { color: var(--text-muted); font-size: 0.9rem; }
+
+        @media (max-width: 900px) {
+            .logo-scroll-wrapper { width: 240px; left: 50%; transform: translateX(-50%); }
+            .logo-box { width: 100%; padding: 10px; }
+            .logo-box img { width: 220px; }
+            header { justify-content: center; padding-top: 100px; height: auto; padding-bottom: 20px;}
+            .hero { padding-top: 280px; }
+        }
+    </style>
+</head>
+<body>
+
+<div id="top" class="logo-scroll-wrapper">
+    <div class="logo-box">
+        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhKm9m1jmnTuNe5z9BIPVUJoubyFjgq-rfVVX_Lg65S6DeTHtB64Nnlpd9dc3twcFveuLZ5QSrFd7F9plwe9MwjE7j2oJSDCCbAh6yYbczCmsLiZx4vMHsqGYlq6vvGLqeHqI7rem5JztX68crSFm-kFqBTrZe2Jw0MvRGepEIeQhLRBHfrW0i6KTWyNGVk/s320/Amstru%20logo.png" alt="Amstru Engineering Consultancy Logo">
+    </div>
+</div>
+
+<header>
+    <nav>
+        <a href="#top">Home</a>
+        <a href="#services">Services</a>
+        <a href="#strategy">Strategy</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>A Legacy of Detail</h1>
+    <p>Transforming complex architectural concepts into high-fidelity structural blueprints</p>
+</section>
+
+<section id="strategy" class="section">
+    <div class="strategy-highlight">
+        <p class="strategy-quote">"An accurate drawing saves time and money. Every minor detail provided in a drawing will create significant impact during the construction phase."</p>
+        <p class="strategy-sub">— The Amstru Strategy</p>
+    </div>
+</section>
+
+<section id="services" class="section">
+    <h2>Core Specializations</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Shop Drawings</h3>
+            <p>Comprehensive assembly and component detailing that optimizes workshop productivity.</p>
+        </div>
+        <div class="card">
+            <h3>BIM Virtualization</h3>
+            <p>Advanced 3D modeling environments providing a "Digital Twin" for coordination.</p>
+        </div>
+        <div class="card">
+            <h3>Erection Logistics</h3>
+            <p>Strategic marking plans and sequence guides designed to expedite field installation.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Project Deliverables</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                
+                <th>Primary Benefit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>3D BIM Environments</td><td>Full Transparency</td></tr>
+            <tr><td>CNC / Manufacturing</td><td>Automated Accuracy</td></tr>
+            <tr><td>Shop Drawings</td><td>Workshop Ease</td></tr>
+            <tr><td>Bill of Materials</td><td>Procurement Control</td></tr>
+        </tbody>
+    </table>
+</section>
+
+<footer id="contact">
+    <h2 style="border:none; text-align:center; padding:0; color:#FFD700; margin-bottom: 10px;">AMSTRU</h2>
+    <p style="color:var(--text-muted); text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem;">Engineering Consultancy</p>
+    <div class="footer-info">
+        <div class="contact-box">
+            <h4>Web</h4>
+            <p>www.amstru.in</p>
+        </div>
+        <div class="contact-box">
+            <h4>Email</h4>
+            <p>eng@amstru.in</p>
+        </div>
+        <div class="contact-box">
+            <h4>Phone</h4>
+            <p>+91 7907134898</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
